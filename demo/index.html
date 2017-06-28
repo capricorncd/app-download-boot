@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>App-Download-Boot by Capricorncd</title>
+<style>
+    body { margin: 0; padding: 0;	font-family: 'Microsoft Yahei';	color: #208d11; background: #208d11; }
+    header { background: #FFF; padding: 2.8em 0; width:100%; text-align: center;color: #208d11;}
+    h1 {margin: 0;font-size: 3em;}
+    button { outline: none; }
+    .btn-group {position: fixed; left: 0; bottom: 4em; width: 100%; text-align: center;}
+    .btn {display: inline-block;border-radius: 2em;border: 2px solid #FFF; background:none;padding: .5em 2em; font-size: 1.5em; opacity: .8; color: #FFF;}
+    .btn:hover {opacity: 1;}
+</style>
+</head>
+<body>
+<header>
+    <h1>NAME</h1>
+    <p>App introduction or brief explanation</p>
+</header>
+
+<div class="btn-group">
+    <!-- <button class="btn app-open">在App内打开</button> -->
+    <button class="btn app-down" id="downloadBtn">Download</button>
+</div>
+
+<!--引入app-download-boot.js文件-->
+<script src="../dist/app-download-boot.js"></script>
+<script>
+    var appDownload = new appDownloadBoot({
+        android: {
+            // 直接下载的文件地址
+            file: 'http://kekecang.com/kekecang.apk',
+            // 需要Android程序员配合，教程 https://my.oschina.net/liucundong/blog/354029
+            schema: 'xmq://',
+            // 应用宝推广链接
+            yyb: 'http://a.app.qq.com/o/simple.jsp?pkgname=com.gaijiawang.kekecang'
+        },
+        ios: {
+            appid: "1110650922",
+            // appStore
+            appstore: 'https://itunes.apple.com/cn/app/ke-ke-cang/id1110650922?mt=8',
+            // 需要ios程序员配合，教程 http://blog.csdn.net/it_kaka/article/details/51958312
+            schema: 'xmq://'
+        },
+        // app下载介绍页面或官网
+        site: 'http://kekecang.com/',
+        // 需要在App内打开的内容链接(app已安装时，启动App并加载此页面)
+        url: 'http://cd.qq.com/a/20161123/005577.htm'
+    });
+
+    document.getElementById('downloadBtn').onclick = function () {
+        appDownload.download();
+    };
+
+</script>
+</body>
+</html>

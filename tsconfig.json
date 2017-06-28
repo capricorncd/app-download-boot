@@ -1,0 +1,9 @@
+{
+  "files": [
+    "src/app-download-boot.ts"
+  ],
+  "compilerOptions": {
+    "noImplicitany": true,
+    "target": "es5"
+  }
+}
