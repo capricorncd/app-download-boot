@@ -44,7 +44,11 @@
         // app下载介绍页面或官网
         site: 'http://kekecang.com/',
         // 需要在App内打开的内容链接(app已安装时，启动App并加载此页面)
-        url: 'http://cd.qq.com/a/20161123/005577.htm'
+        url: 'http://cd.qq.com/a/20161123/005577.htm',
+        // 消息回调
+        callback: function (res) {
+            console.log(res.msg)
+        }
     });
 
     // 点击页面上的下载按钮，跳转或下载app
@@ -62,23 +66,26 @@
 
 * android: `Object` 安卓系统相关配置。
 
->  file: `string` app文件链接地址。    
+>  file: `String` app文件链接地址。
 
->  schema: `string` 与app的通信协议，用于检验是否安装了该app或app捕获该协议做相应操作。
+>  schema: `String` 与app的通信协议，用于检验是否安装了该app或app捕获该协议做相应操作。
 
->  yyb: `string` 腾讯应用宝对应的app地址，当在微信中访问时，将跳转至该链接。
+>  yyb: `String` 腾讯应用宝对应的app地址，当在微信中访问时，将跳转至该链接。
 
 * ios: `Object` IOS设备，对应的相关配置。
 
->  appid: `number` appid；
+>  appid: `Number` appid；
 
->  appstore: `string` apple store 对应的app下载地址；
+>  appstore: `String` apple store 对应的app下载地址；
 
-> schema: `string`与app的通信协议，用于检验是否安装了该app或app捕获该协议做相应操作。
+> schema: `String`与app的通信协议，用于检验是否安装了该app或app捕获该协议做相应操作。
 
-* site: `string` app下载介绍页面或官网地址。
+* site: `String` app下载介绍页面或官网地址。
 
-* url: `string` 需要在App内打开的内容链接(app已安装时，启动App并加载此页面)或字符串。
+* url: `String` 需要在App内打开的内容链接(app已安装时，启动App并加载此页面)或字符串。
+
+* callback: `Function` 执行过程的消息回调。
+
 
 ## 方法
 
