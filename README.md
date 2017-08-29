@@ -22,7 +22,8 @@
 </div>
 
 <!--引入app-download-boot.js文件-->
-<script src="../dist/app-download-boot.js"></script>
+<!--<script src="../dist/app-download-boot.js"></script>-->
+<script src="../dist/app-download-boot.min.js"></script>
 <script>
     var appDownload = new appDownloadBoot({
         android: {
@@ -47,7 +48,7 @@
         url: 'http://cd.qq.com/a/20161123/005577.htm',
         // 消息回调
         callback: function (res) {
-            console.log(res.msg)
+            console.log(res.code, res.msg)
         }
     });
 
@@ -84,7 +85,19 @@
 
 * url: `String` 需要在App内打开的内容链接(app已安装时，启动App并加载此页面)或字符串。
 
-* callback: `Function` 执行过程的消息回调。
+* callback: `Function` 执行过程的消息回调，返回两个参数(code, msg)。
+
+| code | msg |  
+| -- | -- |  
+| 1 | `xxx`参数未配置 |  
+| 2 | `xxx`属性`prop`未配置 |  
+| 3 | 启动App成功 |  
+| 4 | 启动App失败 |  
+| 5 | andriod设备 |  
+| 6 | ios设备 |  
+| 7 | 非Android/ios设备 |  
+| 8 | 尝试启动app |  
+| 9 | 未配置schema协议 |  
 
 
 ## 方法

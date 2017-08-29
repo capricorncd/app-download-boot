@@ -1,6 +1,6 @@
 {
   "name": "app-download-boot",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "app download boot",
   "main": "dist/app-download-boot.js",
   "scripts": {
@@ -15,7 +15,10 @@
   "license": "ISC",
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
     "gulp-typescript": "^3.1.7",
+    "gulp-uglify": "^3.0.0",
+    "gulp-watch": "^4.3.11",
     "typescript": "^2.4.1"
   },
   "repository": {

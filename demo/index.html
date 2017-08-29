@@ -26,7 +26,8 @@
 </div>
 
 <!--引入app-download-boot.js文件-->
-<script src="../dist/app-download-boot.js"></script>
+<!--<script src="../dist/app-download-boot.js"></script>-->
+<script src="../dist/app-download-boot.min.js"></script>
 <script>
     var appDownload = new appDownloadBoot({
         android: {
@@ -50,7 +51,10 @@
         url: 'http://cd.qq.com/a/20161123/005577.htm',
         // 消息回调
         callback: function (res) {
-            console.log(res.msg)
+            console.log(res.code, res.msg)
+            if (res.code === 3 || res.code === 4) {
+                alert(res.msg)
+            }
         }
     });
 
