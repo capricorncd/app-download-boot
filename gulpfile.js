@@ -1,13 +1,14 @@
-var gulp = require('gulp');
-var ts = require('gulp-typescript');
-var tsProject = ts.createProject('tsconfig.json');
-var watch = require('gulp-watch');
-var uglify = require('gulp-uglify');
-var rename = require('gulp-rename');
+const gulp = require('gulp');
+const babel = require('gulp-babel');
+const watch = require('gulp-watch');
+const uglify = require('gulp-uglify');
+const rename = require('gulp-rename');
 
 gulp.task('to-js', function () {
-    return tsProject.src()
-        .pipe(tsProject()).js
+    return gulp.src('./src/app-download-boot.js')
+        .pipe(babel({
+            presets: ['es2015']
+        }))
         .pipe(gulp.dest('dist'));
 });
 
@@ -19,7 +20,7 @@ gulp.task('uglify', ['to-js'], function () {
 });
 
 gulp.task('watch', function () {
-    gulp.watch('./src/*.ts', ['uglify']);
+    gulp.watch('./src/*.js', ['uglify']);
 })
 
 gulp.task('default', ['uglify', 'watch']);
