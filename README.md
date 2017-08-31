@@ -43,9 +43,9 @@
             schema: 'xmq://'
         },
         // app下载介绍页面或官网
-        site: 'http://kekecang.com/',
+        site: 'https://github.com/capricorncd',
         // 需要在App内打开的内容链接(app已安装时，启动App并加载此页面)
-        url: 'http://cd.qq.com/a/20161123/005577.htm',
+        url: 'https://github.com/capricorncd',
         // 消息回调
         callback: function (res) {
             console.log(res.code, res.msg)
